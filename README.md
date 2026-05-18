@@ -210,4 +210,24 @@ HAVING COUNT(*) > 5;
 
 ---
 
-*Made by sahla-amanah 🌿*
+## DCL — Data Control Language
+> Mengatur HAK AKSES user ke database
+
+```sql
+-- Buat user baru
+CREATE USER 'nama_user'@'localhost' IDENTIFIED BY 'password';
+
+-- Beri akses
+GRANT ALL PRIVILEGES ON nama_db.* TO 'nama_user'@'localhost';
+GRANT SELECT, INSERT ON nama_db.* TO 'nama_user'@'localhost';
+
+-- Cabut akses
+REVOKE ALL PRIVILEGES ON nama_db.* FROM 'nama_user'@'localhost';
+
+-- Hapus user
+DROP USER 'nama_user'@'localhost';
+
+-- Lihat hak akses user
+SHOW GRANTS FOR 'nama_user'@'localhost';
+```
+---
